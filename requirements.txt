@@ -1,0 +1,9 @@
+torch
+torchaudio
+torchvision
+opencv-python
+ultralytics
+pdf2image
+img2pdf
+Pillow
+dill

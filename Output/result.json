@@ -1,0 +1,732 @@
+[
+    {
+        "image": "image_7.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    492,
+                    1397,
+                    691
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    932,
+                    1383,
+                    1132
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    733,
+                    1354,
+                    891
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1173,
+                    1397,
+                    1331
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    334,
+                    1400,
+                    451
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    1484,
+                    1406,
+                    1646
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1681,
+                    1400,
+                    1758
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1369,
+                    1361,
+                    1443
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    207,
+                    423,
+                    237
+                ],
+                "text": "Introduction"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    246,
+                    2045,
+                    296,
+                    2080
+                ],
+                "text": ""
+            }
+        ]
+    },
+    {
+        "image": "image_1.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    717,
+                    1186,
+                    1088
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1445,
+                    1171,
+                    1947
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    419,
+                    1179,
+                    709
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1097,
+                    1178,
+                    1300
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    1225,
+                    1412,
+                    1507,
+                    1621
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    247,
+                    1359,
+                    361,
+                    1398
+                ],
+                "text": "History"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    246,
+                    2051,
+                    288,
+                    2080
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    248,
+                    333,
+                    607,
+                    370
+                ],
+                "text": "What is Deep Learning?"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    247,
+                    208,
+                    423,
+                    237
+                ],
+                "text": "Introduction"
+            }
+        ]
+    },
+    {
+        "image": "image_0.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1358,
+                    1183,
+                    1737
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    1272,
+                    388,
+                    1311
+                ],
+                "text": "Objective"
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    311,
+                    616,
+                    1040,
+                    1185
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    247,
+                    543,
+                    661,
+                    625
+                ],
+                "text": "1\n\n \n\nIntroduction"
+            }
+        ]
+    },
+    {
+        "image": "image_5.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    1056,
+                    1184,
+                    1597
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    397,
+                    1180,
+                    937
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1715,
+                    1181,
+                    2006
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    1650,
+                    725,
+                    1690
+                ],
+                "text": "Speech Generation and Recognition"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    989,
+                    822,
+                    1030
+                ],
+                "text": "GANs and Diffusion for Image Generation"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    244,
+                    328,
+                    568,
+                    370
+                ],
+                "text": "Large Language Models"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    207,
+                    423,
+                    237
+                ],
+                "text": "Introduction"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    247,
+                    2045,
+                    294,
+                    2082
+                ],
+                "text": ""
+            }
+        ]
+    },
+    {
+        "image": "image_6.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    542,
+                    1178,
+                    1209
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1581,
+                    1395,
+                    1741
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    333,
+                    1177,
+                    535
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1383,
+                    1377,
+                    1543
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1774,
+                    1400,
+                    1892
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    1930,
+                    1321,
+                    2005
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    1267,
+                    493,
+                    1308
+                ],
+                "text": "Further Reading"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    1325,
+                    209,
+                    1500,
+                    237
+                ],
+                "text": "Introduction"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    1460,
+                    2055,
+                    1502,
+                    2085
+                ],
+                "text": ""
+            }
+        ]
+    },
+    {
+        "image": "image_3.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    798,
+                    1171,
+                    1000
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    1544,
+                    1171,
+                    2005
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    502,
+                    1183,
+                    787
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    334,
+                    1175,
+                    494
+                ],
+                "text": ""
+            },
+            {
+                "label": "Picture",
+                "bbox": [
+                    253,
+                    1045,
+                    1168,
+                    1319
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    207,
+                    423,
+                    237
+                ],
+                "text": "Introduction"
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    247,
+                    1457,
+                    434,
+                    1498
+                ],
+                "text": "Applications"
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    1225,
+                    1046,
+                    1498,
+                    1134
+                ],
+                "text": ""
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    246,
+                    2051,
+                    289,
+                    2084
+                ],
+                "text": ""
+            },
+            {
+                "label": "Caption",
+                "bbox": [
+                    1225,
+                    1046,
+                    1497,
+                    1134
+                ],
+                "text": ""
+            }
+        ]
+    },
+    {
+        "image": "image_4.jpg",
+        "detections": [
+            {
+                "label": "List-item",
+                "bbox": [
+                    246,
+                    1487,
+                    1182,
+                    1647
+                ],
+                "text": ""
+            },
+            {
+                "label": "List-item",
+                "bbox": [
+                    247,
+                    1679,
+                    1169,
+                    1797
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    909,
+                    1185,
+                    1323
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    656,
+                    1184,
+                    899
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    334,
+                    1184,
+                    534
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1330,
+                    1157,
+                    1448
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    246,
+                    587,
+                    389,
+                    627
+                ],
+                "text": "AlphaFold"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    1460,
+                    2058,
+                    1501,
+                    2083
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    1325,
+                    209,
+                    1500,
+                    236
+                ],
+                "text": ""
+            },
+            {
+                "label": "Page-header",
+                "bbox": [
+                    1325,
+                    209,
+                    1500,
+                    237
+                ],
+                "text": ""
+            }
+        ]
+    },
+    {
+        "image": "image_2.jpg",
+        "detections": [
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    756,
+                    1177,
+                    1125
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    332,
+                    1178,
+                    746
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    246,
+                    1133,
+                    1172,
+                    1419
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1430,
+                    1178,
+                    1758
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    1226,
+                    795,
+                    1506,
+                    1092
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    245,
+                    1765,
+                    1176,
+                    1925
+                ],
+                "text": ""
+            },
+            {
+                "label": "Text",
+                "bbox": [
+                    1226,
+                    356,
+                    1497,
+                    685
+                ],
+                "text": ""
+            },
+            {
+                "label": "Section-header",
+                "bbox": [
+                    1325,
+                    207,
+                    1501,
+                    236
+                ],
+                "text": "Introduction"
+            },
+            {
+                "label": "Page-footer",
+                "bbox": [
+                    1460,
+                    2053,
+                    1502,
+                    2085
+                ],
+                "text": ""
+            }
+        ]
+    }
+]

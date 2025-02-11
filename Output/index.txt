@@ -1,0 +1,11 @@
+Page 1: 1 Introduction
+Page 1: Objective
+Page 2: History
+Page 2: Introduction
+Page 2: What is Deep Learning
+Page 4: Applications
+Page 5: AlphaFold
+Page 6: GANs and Diffusion for Image Generation
+Page 6: Large Language Models
+Page 6: Speech Generation and Recognition
+Page 7: Further Reading
