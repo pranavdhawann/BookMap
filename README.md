@@ -3,6 +3,7 @@
 This project automates the process of indexing books using the [YOLOv8X-doclaynet](https://huggingface.co/pranavvdhawann/YOLOv8X-doclaynet) model hosted on Hugging Face. It processes PDF documents by converting them into images, detecting document elements (such as section headers) using the YOLOv8X model, extracting text via Tesseract OCR, and finally generating a structured index.
 
 ![image](https://github.com/user-attachments/assets/dd53fd20-afd9-411c-95b5-eaad98aa751a)
+
 ![image](https://github.com/user-attachments/assets/622f3ff2-6d74-49c2-a5f9-0a569890a8ec)
 
 ## Table of Contents
@@ -99,7 +100,7 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## Acknowledgements
 
 - [tesseract](https://github.com/tesseract-ocr/tesseract) for the OCR functionality.
 - [Poppler](https://poppler.freedesktop.org/) for PDF processing.
