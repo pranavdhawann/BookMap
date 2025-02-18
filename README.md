@@ -83,7 +83,7 @@ Ensure you have the following installed:
    ```
 4. Run the script:
    ```
-    python BookMap.py
+    python book-indexer.py
    ```
 5. Review the Output:
    The processed PDF file, JSON file with detection details, and text file containing the generated index will be saved at the locations specified in       
