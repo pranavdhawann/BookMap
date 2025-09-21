@@ -270,16 +270,28 @@ def too_large(e):
 def not_found(e):
     return jsonify({'error': 'Resource not found'}), 404
 
+@app.route('/health')
+def health_check():
+    """Health check endpoint for Railway"""
+    return jsonify({'status': 'healthy', 'message': 'BookMap Web Application is running'}), 200
+
 @app.errorhandler(500)
 def internal_error(e):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    # Load model on startup
-    if book_indexer.load_model():
-        print("Model loaded successfully")
-    else:
-        print("Warning: Model could not be loaded")
+    # Try to load the model on startup (only for full indexer)
+    try:
+        if hasattr(book_indexer, 'load_model'):
+            if book_indexer.load_model():
+                print("Model loaded successfully")
+            else:
+                print("Warning: Model could not be loaded")
+        else:
+            print("Using minimal indexer - no model loading required")
+    except Exception as e:
+        print(f"Model loading failed: {e}")
+        print("Continuing with minimal functionality")
     
     # Create templates directory if it doesn't exist
     os.makedirs('templates', exist_ok=True)
