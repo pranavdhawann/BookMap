@@ -163,29 +163,10 @@ The application automatically downloads the YOLOv8X-doclaynet model on first run
 - Change the port: `set PORT=5001 && python app.py` (Windows)
 - Or: `PORT=5001 python app.py` (macOS/Linux)
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- [YOLOv8X-doclaynet](https://huggingface.co/pranavvdhawann/YOLOv8X-doclaynet) for document layout analysis
-- [Ultralytics](https://ultralytics.com/) for YOLO implementation
-- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) for text extraction
-- [Flask](https://flask.palletsprojects.com/) for the web framework
-
 ## 📞 Support
 
 If you encounter any issues or have questions, please open an issue on GitHub or contact the maintainers.
-
----
-
-**Made with ❤️ for intelligent document processing**
