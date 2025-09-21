@@ -1,0 +1,375 @@
+/* BookMap Web Application Styles */
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffffff;
+    --accent-color: #e94e77;
+    --background-color: #f9f9f9;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.display-4 {
+    font-weight: 700;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 3px dashed var(--border-color);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    transform: translateY(-2px);
+}
+
+.upload-area.dragover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    transform: scale(1.02);
+}
+
+.upload-content {
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover .upload-content {
+    transform: scale(1.05);
+}
+
+/* File Preview */
+.file-preview {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress Section */
+.progress-section {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.progress {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 10px;
+}
+
+/* Cards */
+.card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-color), #5ba0f2) !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #5ba0f2);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #3a7bc8, #4a90e2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #34ce57);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #218838, #28a745);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-outline-danger {
+    border: 2px solid var(--danger-color);
+    color: var(--danger-color);
+    background: transparent;
+}
+
+.btn-outline-danger:hover {
+    background: var(--danger-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Table */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(74, 144, 226, 0.05);
+    transform: scale(1.01);
+}
+
+/* Alerts */
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+    
+    .card-body {
+        padding: 2rem !important;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .upload-area {
+        padding: 1.5rem 1rem;
+    }
+    
+    .upload-content h4 {
+        font-size: 1.25rem;
+    }
+    
+    .upload-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a7bc8;
+}
+
+/* Page Jump Animation */
+.page-jump {
+    animation: pageJump 0.6s ease;
+}
+
+@keyframes pageJump {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: rgba(74, 144, 226, 0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.border-gradient {
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--accent-color)) 1;
+}
+
+/* PDF Viewer Modal */
+.modal-xl {
+    max-width: 90vw;
+}
+
+.pdf-page-container {
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.pdf-page-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pdf-page-container img:hover {
+    transform: scale(1.02);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), #5ba0f2);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

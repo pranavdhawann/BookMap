@@ -1,106 +1,171 @@
-# BookMap
+# BookMap Web Application
 
-This project automates the process of indexing books using the [YOLOv8X-doclaynet](https://huggingface.co/pranavvdhawann/YOLOv8X-doclaynet) model hosted on Hugging Face. It processes PDF documents by converting them into images, detecting document elements (such as section headers) using the YOLOv8X model, extracting text via Tesseract OCR, and finally generating a structured index.
+A modern web application for automatically indexing PDF documents using AI-powered document layout analysis and OCR technology.
 
-![image](https://github.com/user-attachments/assets/dd53fd20-afd9-411c-95b5-eaad98aa751a)
+## 🚀 Features
 
-![image](https://github.com/user-attachments/assets/622f3ff2-6d74-49c2-a5f9-0a569890a8ec)
+- **AI-Powered Indexing**: Uses YOLOv8X-doclaynet model for intelligent document layout analysis
+- **OCR Integration**: Tesseract OCR for text extraction from detected sections
+- **Modern Web Interface**: Responsive design with drag-and-drop file upload
+- **Real-time Processing**: Live progress updates during document processing
+- **PDF Viewer**: View processed pages with detected sections highlighted
+- **Multiple Export Formats**: Download results as JSON or CSV
+- **Session Management**: Secure file handling with automatic cleanup
 
-## Table of Contents
-- [Features](#features)
-- [Requirements](#requirements)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Future Work](#future-work)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-  
-## Features
-- Accepts input in PDF format.
-- Converts PDF pages to images.
-- Detects document elements using the YOLOv8X-doclaynet model.
-- Extracts text using Tesseract OCR.
-- Generates a structured index from extracted section headers.
-- Reassembles processed images into a PDF.
-- Produces three outputs:
-  - An output PDF file with processed images.
-  - A JSON file containing detection details.
-  - A text file containing the generated index.
-  
-## Requirements
-Ensure you have the following installed:
-- **Python 3.x**
-- **Python Packages** (install via `pip`):
-  - ultralytics
-  - pdf2image
-  - img2pdf
-  - Pillow
-  - pytesseract
-  - json
-  - re
-  - shutil
-- **System Packages**:
-  - poppler-utils
-  - tesseract-ocr
-    
-## Setup
-1. **Configure Paths and Model:**
-   - Update the `root.json` file with:
-     - `model_path`: Path to your YOLOv8X-doclaynet model.
-     - `test_file_path`: Path to the input PDF file.
-     - `output_index_path`: Path to save the generated index text file.
-     - `output_json_path`: Path to save the JSON file with detection details.
-     - `output_pdf_path`: Path to save the processed PDF.
-     - `converted_images_folder`: Directory for storing images converted from PDF.
-     - `processed_images_folder`: Directory for storing processed images with detections.
-     - `class_names`: List of class names used by the model.
-     - `class_colors`: Dictionary of colors for each class.
+## 🛠️ Technology Stack
 
-2. **Download the YOLOv8X-doclaynet Model:**
-   Follow the instructions provided in the repository to set up the model.
-   Clone the model repository from Hugging Face:
-   ```
-   git clone https://huggingface.co/pranavvdhawann/YOLOv8X-doclaynet
-   ```
-   
-## Usage
-1. Clone the repository:
-   ```
-    git clone https://github.com/pranavdhawann/BookMap.git
-    cd BookMap
-   ```
-2. Create a virtual environment:
-   ```
-    python3 -m venv env
-    source env/bin/activate  # For Linux and macOS
-    env\Scripts\activate  # For Windows
-   ```
-3. Install dependencies:
-   ```
-    pip install -r requirements.txt
-    sudo apt-get install poppler-utils tesseract-ocr
-   ```
-4. Run the script:
-   ```
-    python book_indexer.py
-   ```
-5. Review the Output:
-   The processed PDF file, JSON file with detection details, and text file containing the generated index will be saved at the locations specified in       
-   root.json.
-   
-## Future Work
-- [ ] Enhanced OCR Accuracy: Improve text extraction quality.
-- [ ] Multi-language Support: Extend capabilities for non-English documents.
-- [ ] User Interface: Develop a GUI for easier configuration and interaction.
+- **Backend**: Flask (Python)
+- **Frontend**: HTML5, CSS3, JavaScript (Bootstrap 5, jQuery)
+- **AI Model**: YOLOv8X-doclaynet for document layout analysis
+- **OCR**: Tesseract for text extraction
+- **PDF Processing**: pdf2image with Poppler
+- **Deployment**: Railway (with Docker support)
 
-## Contributing
-Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. For suggestions or improvements, feel free to open an issue.
+## 📋 Prerequisites
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- Python 3.8+
+- Poppler (for PDF processing)
+- Tesseract OCR (optional, has fallback)
 
-## Acknowledgements
+### Installing Dependencies
 
-- [tesseract](https://github.com/tesseract-ocr/tesseract) for the OCR functionality.
-- [Poppler](https://poppler.freedesktop.org/) for PDF processing.
+#### Windows
+```bash
+# Install Poppler
+# Download from: https://github.com/oschwartz10612/poppler-windows/releases/
+# Extract and add bin folder to PATH
+
+# Install Tesseract (optional)
+# Download from: https://github.com/UB-Mannheim/tesseract/wiki
+# Install and add to PATH
+```
+
+#### macOS
+```bash
+brew install poppler tesseract
+```
+
+#### Linux (Ubuntu/Debian)
+```bash
+sudo apt update
+sudo apt install poppler-utils tesseract-ocr
+```
+
+## 🚀 Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/bookmap-web.git
+   cd bookmap-web
+   ```
+
+2. **Install Python dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application**
+   ```bash
+   python app.py
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5000`
+
+## 📁 Project Structure
+
+```
+bookmap-web/
+├── app.py                      # Main Flask application
+├── book_indexer_web_fixed.py   # AI processing engine
+├── templates/
+│   └── index.html             # Main web interface
+├── static/
+│   ├── style.css              # Custom styles
+│   └── script.js              # Frontend JavaScript
+├── requirements.txt            # Python dependencies
+├── Procfile                    # Railway deployment config
+├── Dockerfile                  # Docker configuration
+└── README.md                   # This file
+```
+
+## 🔧 Configuration
+
+The application automatically downloads the YOLOv8X-doclaynet model on first run. No additional configuration is required for basic usage.
+
+### Environment Variables (Optional)
+
+- `FLASK_DEBUG`: Set to `true` for development mode
+- `PORT`: Port number for the application (default: 5000)
+
+## 📊 How It Works
+
+1. **Upload**: User uploads a PDF file through the web interface
+2. **Conversion**: PDF pages are converted to images using pdf2image
+3. **AI Analysis**: YOLOv8X-doclaynet model analyzes document layout
+4. **Section Detection**: AI identifies section headers and other document elements
+5. **OCR Processing**: Tesseract extracts text from detected sections
+6. **Index Generation**: Results are compiled into a structured index
+7. **Export**: Users can download results in JSON or CSV format
+
+## 🚀 Deployment
+
+### Railway Deployment
+
+1. **Connect to Railway**
+   ```bash
+   railway login
+   railway init
+   ```
+
+2. **Deploy**
+   ```bash
+   railway up
+   ```
+
+### Docker Deployment
+
+1. **Build the image**
+   ```bash
+   docker build -t bookmap-web .
+   ```
+
+2. **Run the container**
+   ```bash
+   docker run -p 5000:5000 bookmap-web
+   ```
+
+## 📝 API Endpoints
+
+- `GET /`: Main application interface
+- `POST /upload`: File upload endpoint
+- `GET /status/<session_id>`: Processing status
+- `GET /index/<session_id>`: Get processing results
+- `GET /get-page-image/<session_id>/<page_number>`: View processed page
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [YOLOv8X-doclaynet](https://huggingface.co/pranavvdhawann/YOLOv8X-doclaynet) for document layout analysis
+- [Ultralytics](https://ultralytics.com/) for YOLO implementation
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) for text extraction
+- [Flask](https://flask.palletsprojects.com/) for the web framework
+
+## 📞 Support
+
+If you encounter any issues or have questions, please open an issue on GitHub or contact the maintainers.
+
+---
+
+**Made with ❤️ for intelligent document processing**
