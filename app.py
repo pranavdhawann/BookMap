@@ -15,7 +15,13 @@ from flask import Flask, request, jsonify, render_template, send_file, abort
 from werkzeug.utils import secure_filename
 import csv
 import io
-from book_indexer_web_fixed import book_indexer_web as book_indexer
+try:
+    from book_indexer_web_fixed import book_indexer_web as book_indexer
+    print("Using full AI-powered indexer")
+except ImportError as e:
+    print(f"Full indexer not available: {e}")
+    print("Using minimal indexer")
+    from book_indexer_minimal import book_indexer_minimal as book_indexer
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size

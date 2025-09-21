@@ -75,3 +75,4 @@ yolov8x-doclaynet.pt
 # Large files that shouldn't be in Docker image
 railway.json
 env.example
+book_indexer_web_fixed.py
