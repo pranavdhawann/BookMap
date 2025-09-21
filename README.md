@@ -2,6 +2,8 @@
 
 A modern web application for automatically indexing PDF documents using AI-powered document layout analysis and OCR technology.
 
+![BookMap Web Application](screenshot.png)
+
 ## 🚀 Features
 
 - **AI-Powered Indexing**: Uses YOLOv8X-doclaynet model for intelligent document layout analysis
@@ -19,23 +21,20 @@ A modern web application for automatically indexing PDF documents using AI-power
 - **AI Model**: YOLOv8X-doclaynet for document layout analysis
 - **OCR**: Tesseract for text extraction
 - **PDF Processing**: pdf2image with Poppler
-- **Deployment**: Railway (with Docker support)
 
 ## 📋 Prerequisites
 
-- Python 3.8+
-- Poppler (for PDF processing)
-- Tesseract OCR (optional, has fallback)
+Before running the application, you need to install the following dependencies:
 
-### Installing Dependencies
+### System Dependencies
 
 #### Windows
 ```bash
-# Install Poppler
+# Install Poppler (required for PDF processing)
 # Download from: https://github.com/oschwartz10612/poppler-windows/releases/
 # Extract and add bin folder to PATH
 
-# Install Tesseract (optional)
+# Install Tesseract OCR (optional, has fallback)
 # Download from: https://github.com/UB-Mannheim/tesseract/wiki
 # Install and add to PATH
 ```
@@ -51,41 +50,58 @@ sudo apt update
 sudo apt install poppler-utils tesseract-ocr
 ```
 
+### Python Dependencies
+- Python 3.8 or higher
+- pip (Python package installer)
+
 ## 🚀 Quick Start
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/bookmap-web.git
-   cd bookmap-web
-   ```
+### 1. Clone the Repository
+```bash
+git clone https://github.com/pranavdhawann/BookMap.git
+cd BookMap
+```
 
-2. **Install Python dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Create Virtual Environment (Recommended)
+```bash
+# Create virtual environment
+python -m venv venv
 
-3. **Run the application**
-   ```bash
-   python app.py
-   ```
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+```
 
-4. **Open your browser**
-   Navigate to `http://localhost:5000`
+### 3. Install Python Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+```bash
+python app.py
+```
+
+### 5. Open Your Browser
+Navigate to `http://localhost:5000`
 
 ## 📁 Project Structure
 
 ```
-bookmap-web/
+BookMap/
 ├── app.py                      # Main Flask application
 ├── book_indexer_web_fixed.py   # AI processing engine
+├── book_indexer_minimal.py     # Minimal version (fallback)
 ├── templates/
 │   └── index.html             # Main web interface
 ├── static/
 │   ├── style.css              # Custom styles
 │   └── script.js              # Frontend JavaScript
 ├── requirements.txt            # Python dependencies
-├── Procfile                    # Railway deployment config
-├── Dockerfile                  # Docker configuration
+├── Input/                      # Sample PDF files
+├── Output/                     # Generated results
 └── README.md                   # This file
 ```
 
@@ -94,7 +110,6 @@ bookmap-web/
 The application automatically downloads the YOLOv8X-doclaynet model on first run. No additional configuration is required for basic usage.
 
 ### Environment Variables (Optional)
-
 - `FLASK_DEBUG`: Set to `true` for development mode
 - `PORT`: Port number for the application (default: 5000)
 
@@ -108,32 +123,13 @@ The application automatically downloads the YOLOv8X-doclaynet model on first run
 6. **Index Generation**: Results are compiled into a structured index
 7. **Export**: Users can download results in JSON or CSV format
 
-## 🚀 Deployment
+## 🎯 Usage
 
-### Railway Deployment
-
-1. **Connect to Railway**
-   ```bash
-   railway login
-   railway init
-   ```
-
-2. **Deploy**
-   ```bash
-   railway up
-   ```
-
-### Docker Deployment
-
-1. **Build the image**
-   ```bash
-   docker build -t bookmap-web .
-   ```
-
-2. **Run the container**
-   ```bash
-   docker run -p 5000:5000 bookmap-web
-   ```
+1. **Upload a PDF**: Drag and drop or click to select a PDF file
+2. **Wait for Processing**: The AI will analyze your document (progress shown in real-time)
+3. **View Results**: See the generated index with page numbers and section headers
+4. **View Pages**: Click "View" to see the processed PDF pages with detected sections
+5. **Download**: Export results as JSON or CSV files
 
 ## 📝 API Endpoints
 
@@ -142,6 +138,30 @@ The application automatically downloads the YOLOv8X-doclaynet model on first run
 - `GET /status/<session_id>`: Processing status
 - `GET /index/<session_id>`: Get processing results
 - `GET /get-page-image/<session_id>/<page_number>`: View processed page
+- `GET /health`: Health check endpoint
+- `GET /test`: Simple test endpoint
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### "Poppler not installed" Error
+- **Windows**: Download Poppler from the official releases page and add to PATH
+- **macOS**: Run `brew install poppler`
+- **Linux**: Run `sudo apt install poppler-utils`
+
+#### "Tesseract not found" Error
+- The application will use fallback text generation if Tesseract is not available
+- To enable OCR: Install Tesseract and add to PATH
+
+#### Model Download Issues
+- The AI model (~2GB) downloads automatically on first run
+- Ensure stable internet connection for initial setup
+- Model is cached locally after first download
+
+#### Port Already in Use
+- Change the port: `set PORT=5001 && python app.py` (Windows)
+- Or: `PORT=5001 python app.py` (macOS/Linux)
 
 ## 🤝 Contributing
 

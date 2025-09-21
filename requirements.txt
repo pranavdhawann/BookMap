@@ -1,7 +1,6 @@
 # Web Framework
 Flask==2.3.3
 Werkzeug==2.3.7
-gunicorn==21.2.0
 
 # AI/ML Dependencies
 torch==2.0.1
@@ -20,8 +19,8 @@ pytesseract==0.3.10
 # Utilities
 requests==2.31.0
 numpy==1.24.3
-opencv-python-headless==4.8.0.76
+opencv-python==4.8.0.76
 PyYAML==6.0.1
 
-# Development (optional)
+# Development
 python-dotenv==1.0.0

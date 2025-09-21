@@ -15,13 +15,7 @@ from flask import Flask, request, jsonify, render_template, send_file, abort
 from werkzeug.utils import secure_filename
 import csv
 import io
-try:
-    from book_indexer_web_fixed import book_indexer_web as book_indexer
-    print("Using full AI-powered indexer")
-except ImportError as e:
-    print(f"Full indexer not available: {e}")
-    print("Using minimal indexer")
-    from book_indexer_minimal import book_indexer_minimal as book_indexer
+from book_indexer_web_fixed import book_indexer_web as book_indexer
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
@@ -291,18 +285,11 @@ def internal_error(e):
 if __name__ == '__main__':
     print("Starting BookMap Web Application...")
     
-    # Try to load the model on startup (only for full indexer)
-    try:
-        if hasattr(book_indexer, 'load_model'):
-            if book_indexer.load_model():
-                print("Model loaded successfully")
-            else:
-                print("Warning: Model could not be loaded")
-        else:
-            print("Using minimal indexer - no model loading required")
-    except Exception as e:
-        print(f"Model loading failed: {e}")
-        print("Continuing with minimal functionality")
+    # Load the AI model on startup
+    if book_indexer.load_model():
+        print("AI model loaded successfully")
+    else:
+        print("Warning: AI model could not be loaded")
     
     # Create templates directory if it doesn't exist
     os.makedirs('templates', exist_ok=True)
