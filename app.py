@@ -118,7 +118,11 @@ def process_pdf_async(pdf_path, session_id):
 @app.route('/')
 def index():
     """Homepage with upload form"""
-    return render_template('index.html')
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        print(f"Error rendering template: {e}")
+        return f"BookMap Web Application is running! Error: {e}", 200
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -275,11 +279,18 @@ def health_check():
     """Health check endpoint for Railway"""
     return jsonify({'status': 'healthy', 'message': 'BookMap Web Application is running'}), 200
 
+@app.route('/test')
+def test():
+    """Simple test endpoint"""
+    return "BookMap Web Application is working!", 200
+
 @app.errorhandler(500)
 def internal_error(e):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
+    print("Starting BookMap Web Application...")
+    
     # Try to load the model on startup (only for full indexer)
     try:
         if hasattr(book_indexer, 'load_model'):
@@ -296,7 +307,18 @@ if __name__ == '__main__':
     # Create templates directory if it doesn't exist
     os.makedirs('templates', exist_ok=True)
     os.makedirs('static', exist_ok=True)
+    print("Directories created successfully")
+    
+    # Get port from environment
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Starting server on port {port}")
     
     # Run in production mode to avoid constant restarts
     debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
-    app.run(debug=debug_mode, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    print(f"Debug mode: {debug_mode}")
+    
+    try:
+        app.run(debug=debug_mode, host='0.0.0.0', port=port)
+    except Exception as e:
+        print(f"Failed to start server: {e}")
+        raise
