@@ -4,16 +4,6 @@ A modern web application for automatically indexing PDF documents using AI-power
 
 ![BookMap Web Application](screenshot.png)
 
-## 🚀 Features
-
-- **AI-Powered Indexing**: Uses YOLOv8X-doclaynet model for intelligent document layout analysis
-- **OCR Integration**: Tesseract OCR for text extraction from detected sections
-- **Modern Web Interface**: Responsive design with drag-and-drop file upload
-- **Real-time Processing**: Live progress updates during document processing
-- **PDF Viewer**: View processed pages with detected sections highlighted
-- **Multiple Export Formats**: Download results as JSON or CSV
-- **Session Management**: Secure file handling with automatic cleanup
-
 ## 🛠️ Technology Stack
 
 - **Backend**: Flask (Python)
@@ -112,56 +102,6 @@ The application automatically downloads the YOLOv8X-doclaynet model on first run
 ### Environment Variables (Optional)
 - `FLASK_DEBUG`: Set to `true` for development mode
 - `PORT`: Port number for the application (default: 5000)
-
-## 📊 How It Works
-
-1. **Upload**: User uploads a PDF file through the web interface
-2. **Conversion**: PDF pages are converted to images using pdf2image
-3. **AI Analysis**: YOLOv8X-doclaynet model analyzes document layout
-4. **Section Detection**: AI identifies section headers and other document elements
-5. **OCR Processing**: Tesseract extracts text from detected sections
-6. **Index Generation**: Results are compiled into a structured index
-7. **Export**: Users can download results in JSON or CSV format
-
-## 🎯 Usage
-
-1. **Upload a PDF**: Drag and drop or click to select a PDF file
-2. **Wait for Processing**: The AI will analyze your document (progress shown in real-time)
-3. **View Results**: See the generated index with page numbers and section headers
-4. **View Pages**: Click "View" to see the processed PDF pages with detected sections
-5. **Download**: Export results as JSON or CSV files
-
-## 📝 API Endpoints
-
-- `GET /`: Main application interface
-- `POST /upload`: File upload endpoint
-- `GET /status/<session_id>`: Processing status
-- `GET /index/<session_id>`: Get processing results
-- `GET /get-page-image/<session_id>/<page_number>`: View processed page
-- `GET /health`: Health check endpoint
-- `GET /test`: Simple test endpoint
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### "Poppler not installed" Error
-- **Windows**: Download Poppler from the official releases page and add to PATH
-- **macOS**: Run `brew install poppler`
-- **Linux**: Run `sudo apt install poppler-utils`
-
-#### "Tesseract not found" Error
-- The application will use fallback text generation if Tesseract is not available
-- To enable OCR: Install Tesseract and add to PATH
-
-#### Model Download Issues
-- The AI model (~2GB) downloads automatically on first run
-- Ensure stable internet connection for initial setup
-- Model is cached locally after first download
-
-#### Port Already in Use
-- Change the port: `set PORT=5001 && python app.py` (Windows)
-- Or: `PORT=5001 python app.py` (macOS/Linux)
 
 ## 📄 License
 
